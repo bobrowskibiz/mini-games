@@ -11,11 +11,13 @@ var location1,
 	guesses = 0;
 	isSunk = false;
 
-// first ship - "Cruiser 3-elemnts class of ships"  - location:
-	location1 = 3;
-	location2 = 4;
-	location3 = 5;
+// first ship - "Cruiser 3-elemnts class of ships"  - random/location:
+	location1 = Math.floor(Math.random() * 5);
+	location2 = location1 + 1;
+	location3 = location2 + 1;
+	console.log(location1 + "," + location2 + "," + location3);
 
+// game logic
 while (isSunk == false) {
 	guess = prompt('Search: Cruiser(3-size) class of ships. Enter position to shot(from 0-6): ');
 	console.log(guess);
@@ -37,5 +39,7 @@ while (isSunk == false) {
 		}
 	}
 }
+
+// end game stats
 var stats = "You need " + guesses + " shots to destroy cruiser(3-size) ship. Your effective is: " + (3/guesses) + ".";
 alert(stats);
